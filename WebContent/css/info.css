@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+body, input, select, button, table {
+	font-family: "Malgun Gothic", "맑은 고딕";
+}
+
+#submenu{
+	width: 100%;
+	float: left;
+	border-top: 1.5px solid #DBE3E3;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+#submenu ul{
+	padding-left: 20%;
+}
+
+#submenu_t{
+	padding: 0.8% 1.3%;
+	padding-right: 9%;
+}
+
+#submenu_img{
+	padding: 0.8% 1.3%;
+}
+
+#submenu li{
+	float: left;
+	list-style: none;
+	border-left: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+
+}
+
+#submenu a{
+	color: #595959;
+    text-decoration: none;
+    font-size: 0.875em;
+}
+
+.main{
+	width: 100%;
+	float: left;
+	padding-top: 5%;
+	padding-left: 20%;
+}
+
+.main h3{
+	font-size: 1.8em;
+    line-height: 1em;
+    color: #262626;
+    font-weight: normal;
+}
+
+#main_menu{
+	width: 100%;
+	padding-top: 4%;
+}
+
+#main_menu ul{
+	width: 100%;
+	float: left;
+}
+
+#main_menu li{
+	float: left;
+	border: 1px solid #d2d2d2;
+	padding: 0.5% 6%;
+}
+
+#main_bar{
+	width: 100%;
+	padding-top: 10%;
+}
+
+#main_ber span{
+	float: left;
+	font-weight: bold;
+    font-size: 0.875em;
+    color: #313131;
+}
+
+#bar_search{
+	float: right;
+	margin-right: 43.5%;
+}
+
+#bar_search select{
+	color: #666666;
+    font-size: 16px;
+    padding: 7.3px 1px;
+    padding-right: 4px;
+}
+
+#bar_search input{
+	padding: 8px 20px;
+}
+
+#bar_search button{
+	padding: 6.5px 11px;
+}
+
+#bar_search li{
+	float: left;
+	padding-left: 3px;
+}
+
+#main_menu a{
+	text-decoration: none;
+	font-family: "Malgun Gothic", "맑은 고딕";
+	color: #222;
+}
+
+#main{
+	width: 100%;
+	float: left;
+	padding-top: 1%;
+}
+
+#main table{
+	width: 57%;
+	border-collapse:collapse;
+}
+
+#main table > thead > tr > td{
+	padding: 1.2% 0;
+	border-top: 1px solid #333;
+    border-bottom: 2px solid #333;
+    color: #222;
+    font-weight: bold;
+}
+#noti{
+	color: #fe6e17;
+    font-weight: bold;
+}
+
+
+#main td{
+	text-align: center;
+	color: #666666;
+	border-bottom: 1px solid #e1e1e1;
+	width: auto;
+	padding: 1% 0;
+}
+
+
+#tit{
+	text-align: left;
+}
+
+#main tfoot td{
+	padding: 3% 0;
+
+}
+
+#m_foot a{
+    text-decoration: none;
+    color: #555;
+    font-size: 12px;
+    margin-top: 0;
+}
+
+#select{
+	background-color: #0667b1;
+}
+
+#select a{
+	color: white;
+}

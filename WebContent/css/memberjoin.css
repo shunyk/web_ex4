@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+#main {
+	background-color: white;
+}
+
+#main>h1, p {
+	text-align: center;
+}
+
+#main>table {
+	font-size: 15px;
+	height: 500px;
+}
+
+#main ul{
+	list-style: none;
+}
+
+#td_text{
+	font-size: 13px;
+	color: gray;
+}
+
+#input{
+	padding-left: 50px;
+}
+
+#input > input{
+	color: gray;
+}
+
+#input_text{
+	padding-right: 30px;
+}
+
+#text{
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#button {
+	font-size: 30px;
+	background-color: gray;
+	border: 1px solid gray;
+	border-radius: 40px;
+	color: white;
+	margin: 0 auto;
+	width: 80px;
+}
+
+#foot {
+	padding-left: 400px;
+}
+
+#box{
+	width: 256px;
+	height: 36px;
+	border: 1px solid #cfcfcf;
+	border-radius: 3px;
+}
+
+#email{
+	width: 116px;
+	height: 36px;
+	border: 1px solid #cfcfcf;
+	border-radius: 3px;
+}
+
+#select{
+	width: 125px;
+	height: 40px;
+	border: 1px solid #cfcfcf;
+	border-radius: 3px;
+}
+
+#date{
+	width: 65px;
+	height: 40px;
+	border: 1px solid #cfcfcf;
+	border-radius: 3px;
+}
+
+#at{
+	margin: 0 3px;
+}
