@@ -4,6 +4,80 @@
 <meta charset="UTF-8">
 <title>clausePage</title>
 <link rel="stylesheet" type="text/css" href="/web_ex4/css/clause.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	$('#allAgree').click(function () {
+		var c = $(this).prop('checked');
+		$('.inp_check').prop('checked', c);
+		if(c){
+			$('#join').css('background','yellow');
+			$('#join').css('cursor','pointer');
+			$('.c_img').each(function() {
+				$(this).attr('src', '/web_ex4/img/check/un_check.png');
+			});
+		}else{
+			$('#join').css('background','#d4d4d4');
+			$('.c_img').each(function() {
+				$(this).attr('src', '/web_ex4/img/check/check.png');
+			});
+		}
+	});
+
+	/*==============================*/
+
+	$('.inp_check').click(function () {
+		var c=$(this).prop('checked');
+		var check = true;
+		var select = $(this).attr('title');
+		if(c){
+			$('.c_img').each(function() {
+				if($(this).attr('title')==select){
+					$(this).attr('src', '/web_ex4/img/check/un_check.png');
+				}
+			});
+		}
+		else{
+			$('.c_img').each(function() {
+				if($(this).attr('title')==select){
+					$(this).attr('src', '/web_ex4/img/check/check.png');
+				}
+			});
+		}
+		$('.inp_check').each(function () {
+			if(!$(this).prop('checked')){
+				check = false;
+			}
+		});
+		$('#allAgree').prop('checked', check);
+		
+		if($('#allAgree').prop('checked')){
+			$('#join').css('background','yellow');
+			$('#join').css('cursor','pointer');
+			$('#allcheck').attr('src', '/web_ex4/img/check/un_check.png');
+		}else{
+			$('#join').css('background','#d4d4d4');
+			$('#allcheck').attr('src', '/web_ex4/img/check/check.png');
+		}
+	});
+	
+
+	/*==============================*/
+
+	$('#join').click(function () {
+		var c = $('#allAgree').prop('checked');
+		if(c){
+			location.href="./memberjoin.html";
+		}else{
+			alert("약관 동의 필요");
+		}
+	});
+	
+	/*==============================*/
+	
+});
+</script>
 </head>
 <body>
 <div class="header">
@@ -29,32 +103,41 @@
 	<div id="clause">
 		<ul>
 			<li id="all">모두 확인, 동의합니다
-			<input id="allAgree" name="allAgree" type="checkbox" class="inp_check" data-target="terms">
+			<input id="allAgree" name="allAgree" type="checkbox" data-target="terms">
+			<img alt="check" src="/web_ex4/img/check/check.png" id="allcheck" class="c_img">
 			<hr>
 			<span id="c_text">· 전체동의는 필수 및 선택정보에 대한 동의도 포함되어 있으며, 개별적으로도 동의를 선택하실 수 있습니다.<br>
 			· 선택항목에 대한 동의를 거부하시는 경우에도 서비스는 이용이 가능합니다.</span>
 			</li>
 			<li>카카오 서비스 약관 <span id="necessary">(필수)</span>
 			<span id="option"><a href="/web_ex4/clause/clause1.html" id="more" target="_blank">보기</a>
-			<input id="allAgree" name="allAgree" type="checkbox" class="inp_check" data-target="terms"></span>
+			<input name="allAgree" type="checkbox" class="inp_check" data-target="terms" title="1">
+			<img alt="check" src="/web_ex4/img/check/check.png" class="c_img" title="1">
+			</span>
 			</li>
 			<li>개인정보 수집 및 이용 동의 <span id="necessary">(필수)</span>
 			<span id="option"><a href="/web_ex4/clause/clause2.html" id="more" target="_blank">보기</a>
-				<input id="allAgree" name="allAgree" type="checkbox" class="inp_check" data-target="terms"></span>
+				<input name="allAgree" type="checkbox" class="inp_check" data-target="terms" title="2">
+				<img alt="check" src="/web_ex4/img/check/check.png" class="c_img" title="2">
+				</span>
 			</li>
 			<li>프로필 정보 추가 수집 동의 <span id="choice">(선택)</span>
 			<span id="option"><a href="/web_ex4/clause/clause3.html" id="more" target="_blank">보기</a>
-				<input id="allAgree" name="allAgree" type="checkbox" class="inp_check" data-target="terms"></span>
+				<input name="allAgree" type="checkbox" class="inp_check" data-target="terms" title="3">
+				<img alt="check" src="/web_ex4/img/check/check.png" class="c_img" title="3">
+				</span>
 			</li>
 			<li>이벤트 및 마케팅 활용 동의 <span id="choice">(선택)</span>
 			<span id="option"><a href="/web_ex4/clause/clause4.html" id="more" target="_blank">보기</a>
-				<input id="allAgree" name="allAgree" type="checkbox" class="inp_check" data-target="terms"></span>
+				<input name="allAgree" type="checkbox" class="inp_check" data-target="terms" title="4">
+				<img alt="check" src="/web_ex4/img/check/check.png" class="c_img" title="4">
+				</span>
 			</li>
 		</ul>
 		<br>
 	</div>
 	<div id="next">
-	<a href="/web_ex4/member/memberjoin.html">다음</a>
+	<button id="join">다음</button>
 	</div>
 </div>
 </body>

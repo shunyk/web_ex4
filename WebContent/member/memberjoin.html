@@ -2,9 +2,63 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JoinPa/web_ex4/member//web_ex4/member/ge</title>
+<title>JoinPage</title>
 <link rel="stylesheet" type="text/css" href="/web_ex4/css/clause_common.css">
 <link rel="stylesheet" type="text/css" href="/web_ex4/css/memberjoin.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	var check=false;
+	$('.necessary').blur(function() {
+		$('.necessary').each(function () {
+			if($(this).val()!=''){
+				check=true;
+			}else{
+				check=false;
+			}
+		})
+		if(check){
+			$('#join').css('background', 'yellow');
+			$('#join').css('cursor', 'pointer');
+		}else{
+			$('#join').css('background','#d4d4d4');
+		}
+	});
+	
+	$('#select').change(function() {
+		$('.select').each(function() {
+			var c = $(this).prop('selected');
+			if(c){
+				$('.email2').attr('value', $(this).html());
+			}
+		});
+	});
+	
+	$('#join').click(function() {
+		var check=false;
+		if(!check){
+		$('.necessary').each(function () {
+			if($(this).val()!=''){
+				check=true;
+			}else{
+				check=false;
+			}
+		});
+		if(!check){
+			alert("모든 칸을 채워주세요");
+		}
+		else if($('#pw').val().length < 8){
+			alert("비밀번호는 8자 이상으로 적어주세요");
+		}
+		else if($('#pw').val()!=$('#pw2').val()){
+			alert("비밀번호가 틀립니다");
+		}
+		}
+	});
+});
+</script>
+
 </head>
 <body>
 <div class="header">
@@ -35,12 +89,13 @@
 	<table>
 		<tr>
 			<td id="text">이메일</td>
-			<td id="input"><input type="text" id="email"><span id="at">@</span><input type="text" id="email"> <select id="select">
+			<td id="input"><input type="text" id="email" class="necessary"><span id="at">@</span><input type="text" class="email2" id="email">
+				<select id="select">
 					<option selected>도메인 선택</option>
-					<option>naver.com</option>
-					<option>gmail.com</option>
-					<option>hanmail.net</option>
-					<option>daum.net</option>
+					<option class="select">naver.com</option>
+					<option class="select">gmail.com</option>
+					<option class="select">hanmail.net</option>
+					<option class="select">daum.net</option>
 			</select>
 			<br>
 			<span id="td_text">
@@ -51,11 +106,11 @@
 		</tr>
 		<tr>
 			<td id="text">비밀번호(8~32자리)</td>
-			<td id="input"><input type="password" maxlength="32"  id="box"></td>
+			<td id="input"><input type="password" maxlength="32" id="pw" class="necessary" placeholder="비밀번호(8~32자리)"></td>
 		</tr>
 		<tr>
 			<td id="text">비밀번호 재입력</td>
-			<td id="input"><input type="password" maxlength="32"  id="box">
+			<td id="input"><input type="password" maxlength="32" id="pw2" class="necessary" placeholder="비밀번호 재입력">
 				<br>
 				<span id="td_text">
 					·비밀번호 8 ~ 32 자의 영문 대소문자, 숫자, 특수문자를 조합하여 설정해주세요.<br>
@@ -66,7 +121,7 @@
 		</tr>
 		<tr>
 			<td id="text">닉네임</td>
-			<td id="input"><input type="text" id="box"></td>
+			<td id="input"><input type="text" id="nic" class="necessary" placeholder="닉네임을 입력해주세요."></td>
 		</tr>
 		<tr>
 			<td id="text">생년월일</td>
@@ -113,7 +168,7 @@
 		</tr>
 	</table>
 	<div id="next">
-				<a href="/web_ex4/member/memberjoin.html">다음</a>
+				<button id="join">다음</button>
 	</div>
 	<hr>
 	<p id="foot_p">

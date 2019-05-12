@@ -79,7 +79,6 @@ ul{
     color: #333;
 }
 
-
 #clause li{
 	border: 1px solid #d4d4d4;
 	padding: 2% 2%;
@@ -91,13 +90,14 @@ ul{
 	padding: 8% 0 3% 45%;
 }
 
-#next a{
-	text-decoration: none;
-	background-color: #d4d4d4;
-    color: #777;
-    padding: 1.2% 3%;
+#join{
+	width: 100px;
+    height: 46px;
+    margin-top: 15px;
+    border: 1px solid #d4d4d4;
     border-radius: 3px;
     font-size: 16px;
+    line-height: 18px;
 }
 
 #foot_p{
@@ -119,4 +119,18 @@ ul{
 
 #option input{
 	padding-left: 30px;
+	position: relative;
+	left: 30px;
+	width: 24px;
+    height: 24px;
+    opacity: .01;
+}
+
+#all input{
+	padding-left: 30px;
+	position: relative;
+	left: 30px;
+	width: 24px;
+    height: 24px;
+    opacity: .01;
 }
